@@ -118,6 +118,7 @@ const routes = [
         name: "powernm",
         component: () => import("@/components/PowernmView.vue"),
       },
+      {},
     ],
   },
   {
