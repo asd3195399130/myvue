@@ -1,33 +1,39 @@
 <template>
-  <el-table :data="tableData" style="width: 100%">
-    <el-table-column v-for="column in tableColumns" :key="column.prop" :label="column.label" :prop="column.prop">
+  <div>
+    <el-table
+    :data="tableData"
+    height="250"
+    border
+    style="width: 100%">
+    <el-table-column v-for="(item, index) in tablehaders " :key="index"
+      :prop="item.prop"
+      :label="item.label"
+      width="300">
     </el-table-column>
-    <el-table-column label="操作">
-      <template slot-scope="scope">
-        <el-button size="mini" type="text" @click="handleEdit(scope.row)">编辑</el-button>
-        <el-button size="mini" type="text" @click="handleRemove(scope.row)">删除</el-button>
-        <slot name="extraButtons" :row="scope.row"></slot>
-      </template>
-    </el-table-column>
+   <el-table-column label="操作" width="180">
+ <template >
+ <el-button size="mini" type="primary" >编辑</el-button>
+ <el-button size="mini" type="danger" >删除</el-button>
+ </template>
+</el-table-column>
   </el-table>
+
+  </div>
+  
 </template>
 
 <script>
-export default {
-  name: 'my-table',
-  props: {
-    tableData: {
-      type: Array,
-      required: true
-    },
-    tableColumns: {
-      type: Array,
-      required: true
+  export default {
+    props:["tableData","tablehaders"],
+    data() {
+      return {
+       
+      }
     }
-  },
-  methods: {},
-  create(){
-    console.log(this.tableData,this.tableColumns);
   }
-}
 </script>
+<style>
+.cell{
+  text-align:center;
+}
+</style>

@@ -9,7 +9,7 @@ const routes = [
     path: "/",
     name: "home",
     component: HomeView,
-    redirect: "/home/HelloWorld",
+    redirect: "/Teacher/manage",
     children: [
       {
         path: "/home/HelloWorld",
@@ -26,6 +26,21 @@ const routes = [
         name: "Mycheck",
         component: () => import("@/components/MycheckView.vue"),
       },
+      {
+        path: "/home/shopp",
+        name: "shopp",
+        component: () => import("../views/ShoppLing.vue"),
+      },
+      {
+        path: "/home/CompuTn",
+        name: "CompuTn",
+        component: () => import("../views/CompuTn.vue"),
+      },
+      {
+        path: "/home/RegisterView",
+        name: "Register",
+        component: () => import("../views/RegisterView.vue"),
+      },
     ],
   },
   {
@@ -37,6 +52,24 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
   },
+  {
+    path: "/Login",
+    name: "login",
+    component: () => import("../views/LoginView.vue"),
+    children: [],
+  },{
+    path:"/Teacher",
+    name: "teacher",
+    component: () => import("../views/TeacherView.vue"),
+    children:[
+      {
+        path:"/Teacher/manage",
+        name: "manage",
+        component: () => import("../views/TeacherManageView.vue"),
+      }
+
+    ]
+  }
 ];
 
 const router = new VueRouter({

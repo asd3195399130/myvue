@@ -14,6 +14,9 @@ import MyTable from "@/components/MyTable.vue";
 Vue.component("my-table", MyTable);
 // import MyTableColunmn from "@/components/MyTableColunmn.vue";
 // Vue.component("My-Table-Colunmn", MyTableColunmn);
+import { apiGet, apiPost } from "./api/api";
+Vue.prototype.$apiGet = apiGet;
+Vue.prototype.$apiPost = apiPost;
 new Vue({
   router,
   store,

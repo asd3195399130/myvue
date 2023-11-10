@@ -19,16 +19,22 @@
               <el-menu-item-group title="分组2">
                 <el-menu-item index="/home/Mycheck">查看id</el-menu-item>
               </el-menu-item-group>
-              <el-submenu index="/about">
+              <el-menu-item-group title="商品">
+                <el-menu-item index="/home/shopp">商品列表</el-menu-item>
+              </el-menu-item-group>
+              <el-menu-item-group title="百度">
+                <el-menu-item index="/home/RegisterView">百度搜索</el-menu-item>
+              </el-menu-item-group>
+              <el-submenu index="/home/CompuTn">
                 <template slot="title">选项4</template>
-                <el-menu-item index="1-4-1">选项1</el-menu-item>
+                <el-menu-item index="/home/CompuTn">结果</el-menu-item>
               </el-submenu>
             </el-submenu>
             <el-menu-item index="/index">
               <i class="el-icon-menu"></i>
               <span slot="title">导航二</span>
             </el-menu-item>
-            <el-menu-item index="3" >
+            <el-menu-item index="3">
               <i class="el-icon-document"></i>
               <span slot="title">导航三</span>
             </el-menu-item>
