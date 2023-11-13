@@ -9,7 +9,7 @@ const routes = [
     path: "/",
     name: "home",
     component: HomeView,
-    redirect: "/Teacher/manage",
+    redirect: "/home/RegisterView",
     children: [
       {
         path: "/home/HelloWorld",
@@ -57,19 +57,24 @@ const routes = [
     name: "login",
     component: () => import("../views/LoginView.vue"),
     children: [],
-  },{
-    path:"/Teacher",
+  },
+  {
+    path: "/Teacher",
     name: "teacher",
     component: () => import("../views/TeacherView.vue"),
-    children:[
+    children: [
       {
-        path:"/Teacher/manage",
+        path: "/Teacher/manage",
         name: "manage",
         component: () => import("../views/TeacherManageView.vue"),
-      }
-
-    ]
-  }
+      },
+      {
+        path: "/Teacher/addlistView",
+        name: "addlistview",
+        component: () => import("../views/addlistView.vue"),
+      },
+    ],
+  },
 ];
 
 const router = new VueRouter({

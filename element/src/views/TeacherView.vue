@@ -4,7 +4,7 @@
 <TeachList />
 <nav nav>
     <router-link to="/Teacher/manage">讲师管理</router-link>/
-    <router-link to="">讲师列表</router-link>
+    <router-link to="/Teacher/addlistView">讲师列表</router-link>
 </nav>
 <div>
     <router-view></router-view>
